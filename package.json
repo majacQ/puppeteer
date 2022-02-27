@@ -30,7 +30,11 @@
     "doc": "node utils/doclint/cli.js",
     "clean-lib": "rimraf lib",
     "build": "npm run tsc && npm run generate-d-ts",
+  <<<<<<< revert_esm
+    "tsc": "npm run clean-lib && tsc --version && (npm run tsc-cjs & npm run tsc-esm)",
+  =======
     "tsc": "npm run clean-lib && tsc --version && npm run tsc-cjs && npm run tsc-esm",
+  >>>>>>> main
     "tsc-cjs": "tsc -b src/tsconfig.cjs.json",
     "tsc-esm": "tsc -b src/tsconfig.esm.json",
     "apply-next-version": "node utils/apply_next_version.js",

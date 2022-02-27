@@ -20,6 +20,10 @@ import { sync } from 'pkg-dir';
 import { dirname } from 'path';
 import { Product } from './common/Product.js';
 
+  <<<<<<< revert_esm
+export const initializePuppeteerNode = (packageName: string): PuppeteerNode => {
+  const puppeteerRootDirectory = sync(__dirname);
+  =======
 function resolvePuppeteerRootDirectory(): string | undefined {
   try {
     // In some environments, like esbuild, this will throw an error.
@@ -32,6 +36,7 @@ function resolvePuppeteerRootDirectory(): string | undefined {
     return sync(__dirname);
   }
 }
+  >>>>>>> main
 
 export const initializePuppeteerNode = (packageName: string): PuppeteerNode => {
   const puppeteerRootDirectory = resolvePuppeteerRootDirectory();
