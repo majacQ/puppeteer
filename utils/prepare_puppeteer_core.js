@@ -21,8 +21,7 @@ const path = require('path');
 const packagePath = path.join(__dirname, '..', 'package.json');
 const json = require(packagePath);
 
-delete json.scripts.install;
-
 json.name = 'puppeteer-core';
+delete json.scripts.install;
 json.main = './cjs-entry-core.js';
 fs.writeFileSync(packagePath, JSON.stringify(json, null, '  '));

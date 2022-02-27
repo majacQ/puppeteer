@@ -14,9 +14,12 @@ cd $TMPDIR
 # 3. Requiring Puppeteer from Node works.
 npm install --loglevel silent "${tarball}"
 node --eval="require('puppeteer')"
+  <<<<<<< revert_esm
 node --eval="
 require('puppeteer/lib/cjs/puppeteer/revisions.js');
 "
+  =======
+  >>>>>>> main
 ls $TMPDIR/node_modules/puppeteer/.local-chromium/
 
 # Again for Firefox
@@ -41,5 +44,9 @@ cd $TMPDIR
 # 3. Requiring Puppeteer Core from Node works.
 npm install --loglevel silent "${tarball}"
 node --eval="require('puppeteer-core')"
+  <<<<<<< revert_esm
 node --eval="require('puppeteer-core/lib/cjs/puppeteer/revisions')"
 node --eval="require('puppeteer-core/lib/cjs/puppeteer/revisions.js')"
+  =======
+
+  >>>>>>> main

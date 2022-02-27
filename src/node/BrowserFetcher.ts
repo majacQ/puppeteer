@@ -34,8 +34,7 @@ import createHttpsProxyAgent, {
 } from 'https-proxy-agent';
 import { getProxyForUrl } from 'proxy-from-env';
 import { assert } from '../common/assert.js';
-import tar from 'tar-fs';
-import bzip from 'unbzip2-stream';
+import { PUPPETEER_REVISIONS } from '../revisions.js';
 
 const debugFetcher = debug('puppeteer:fetcher');
 
@@ -348,10 +347,12 @@ export class BrowserFetcher {
   }
 
   /**
-   * @param revision - The revision to get info for.
+   * @param revision? - The revision to get info for. If not set, the latest
+   * revision info is returned.
    * @returns The revision info for the given revision.
    */
-  revisionInfo(revision: string): BrowserFetcherRevisionInfo {
+  revisionInfo(revision?: string): BrowserFetcherRevisionInfo {
+    if (!revision) revision = PUPPETEER_REVISIONS[this._product];
     const folderPath = this._getFolderPath(revision);
     let executablePath = '';
     if (this._product === 'chrome') {
@@ -501,6 +502,10 @@ function install(archivePath: string, folderPath: string): Promise<unknown> {
  * @internal
  */
 function extractTar(tarPath: string, folderPath: string): Promise<unknown> {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const tar = require('tar-fs');
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const bzip = require('unbzip2-stream');
   return new Promise((fulfill, reject) => {
     const tarStream = tar.extract(folderPath);
     tarStream.on('error', reject);

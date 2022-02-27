@@ -24,6 +24,7 @@ const {
 
 const EXCLUDE_PROPERTIES = new Set([
   'Browser.create',
+  'Frame.client',
   'Headers.fromPayload',
   'Page.client',
   'Page.create',
@@ -411,21 +412,21 @@ function compareDocumentations(actual, expected) {
         'Method ElementHandle.dragEnter() data',
         {
           actualName: 'Object',
-          expectedName: 'DragData',
+          expectedName: 'Protocol.Input.DragData',
         },
       ],
       [
         'Method ElementHandle.dragOver() data',
         {
           actualName: 'Object',
-          expectedName: 'DragData',
+          expectedName: 'Protocol.Input.DragData',
         },
       ],
       [
         'Method ElementHandle.drop() data',
         {
           actualName: 'Object',
-          expectedName: 'DragData',
+          expectedName: 'Protocol.Input.DragData',
         },
       ],
       [
@@ -509,7 +510,7 @@ function compareDocumentations(actual, expected) {
         'Method Mouse.dragEnter() data',
         {
           actualName: 'Object',
-          expectedName: 'DragData',
+          expectedName: 'Protocol.Input.DragData',
         },
       ],
       [
@@ -523,7 +524,7 @@ function compareDocumentations(actual, expected) {
         'Method Mouse.dragOver() data',
         {
           actualName: 'Object',
-          expectedName: 'DragData',
+          expectedName: 'Protocol.Input.DragData',
         },
       ],
       [
@@ -537,7 +538,7 @@ function compareDocumentations(actual, expected) {
         'Method Mouse.drop() data',
         {
           actualName: 'Object',
-          expectedName: 'DragData',
+          expectedName: 'Protocol.Input.DragData',
         },
       ],
       [
@@ -586,27 +587,27 @@ function compareDocumentations(actual, expected) {
         'Method Frame.goto() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Frame.waitForNavigation() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Frame.setContent() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
@@ -620,54 +621,54 @@ function compareDocumentations(actual, expected) {
         'Method Page.goBack() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Page.goForward() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Page.goto() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Page.reload() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Page.setContent() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
         'Method Page.waitForNavigation() options.waitUntil',
         {
           actualName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array',
           expectedName:
-            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|Array<PuppeteerLifeCycleEvent>',
+            '"load"|"domcontentloaded"|"networkidle0"|"networkidle2"|"interactive"|Array<PuppeteerLifeCycleEvent>',
         },
       ],
       [
@@ -723,7 +724,7 @@ function compareDocumentations(actual, expected) {
         'Method Page.setUserAgent() userAgentMetadata',
         {
           actualName: 'Object',
-          expectedName: 'UserAgentMetadata',
+          expectedName: 'Protocol.Emulation.UserAgentMetadata',
         },
       ],
       [
@@ -828,14 +829,14 @@ function compareDocumentations(actual, expected) {
         'Method Page.setCookie() ...cookies',
         {
           actualName: '...Object',
-          expectedName: '...CookieParam',
+          expectedName: '...Protocol.Network.CookieParam',
         },
       ],
       [
         'Method Page.emulateVisionDeficiency() type',
         {
           actualName: 'string',
-          expectedName: 'Object',
+          expectedName: 'Protocol.Emulation.SetEmulatedVisionDeficiencyRequest',
         },
       ],
       [
@@ -996,7 +997,7 @@ function compareDocumentations(actual, expected) {
         'Method Page.deleteCookie() ...cookies',
         {
           actualName: '...Object',
-          expectedName: '...DeleteCookiesRequest',
+          expectedName: '...Protocol.Network.DeleteCookiesRequest',
         },
       ],
       [
